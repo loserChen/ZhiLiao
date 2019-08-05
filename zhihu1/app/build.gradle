@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: "com.mob.sdk"
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.chenzeyuan.zhihu1"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+MobSDK {
+    //写你创建应用的appkey和appsecret
+    appKey "26064f47f80ec"
+    appSecret "00e47eb7f957197148b90ec01d7f80d0"
+    SMSSDK {}
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    compile 'com.android.support:cardview-v7:27.1.1'
+    compile 'com.youth.banner:banner:1.4.10'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.12'
+    // https://mvnrepository.com/artifact/com.nostra13.universalimageloader/universal-image-loader
+    compile group: 'com.nostra13.universalimageloader', name: 'universal-image-loader', version: '1.9.5'
+    compile 'ren.yale.android:cachewebviewlib:1.4.0'
+
+}
